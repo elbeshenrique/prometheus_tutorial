@@ -51,8 +51,9 @@ services:
       - "9100:9100"      
     networks:
       - monitor-net
+
   grafana:
-   image: grafana/grafana:latest
+   image: grafana/grafana:latest-ubuntu
    container_name: grafana
    volumes:
      - grafana_data:/var/lib/grafana
@@ -71,6 +72,7 @@ services:
      - 3000:3000
    networks:
      - monitor-net     
+  
   web:
    build: .
    expose:
